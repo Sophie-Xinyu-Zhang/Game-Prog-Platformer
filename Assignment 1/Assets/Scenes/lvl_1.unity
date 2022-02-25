@@ -275,6 +275,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   Feet: {fileID: 1572877877}
+  bulletPrefab: {fileID: 7891260353483765251, guid: 370c07826c48c40c0b4db33ee68eac65, type: 3}
 --- !u!95 &132807825
 Animator:
   serializedVersion: 4
