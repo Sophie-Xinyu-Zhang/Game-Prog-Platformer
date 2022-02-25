@@ -34,8 +34,7 @@ public class PlayerCode : MonoBehaviour
         // moving the player left and right
         float xSpeed = Input.GetAxis("Horizontal") * speed;
         rb.velocity = new Vector2(xSpeed, rb.velocity.y);
-        anim.SetFloat("RightSpeed", xSpeed);
-        anim.SetFloat("LeftSpeed", xSpeed);
+        anim.SetFloat("Speed", Mathf.Abs(xSpeed));
         
 
         if(grounded && Input.GetButtonDown("Jump"))
