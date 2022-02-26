@@ -11,7 +11,8 @@ public class PlayerCode : MonoBehaviour
     int jumpForce = 600;
     public LayerMask groundLayer;
     public Transform Feet;
-
+    public GameObject bulletPrefab;
+    int bulletForce = 500;
     bool grounded = false;
     float groundCheckDis = 0.1f;
     // Start is called before the first frame update
@@ -33,13 +34,23 @@ public class PlayerCode : MonoBehaviour
         // moving the player left and right
         float xSpeed = Input.GetAxis("Horizontal") * speed;
         rb.velocity = new Vector2(xSpeed, rb.velocity.y);
-        anim.SetFloat("RightSpeed", xSpeed);
-        anim.SetFloat("LeftSpeed", -xSpeed);
+        anim.SetFloat("Speed", Mathf.Abs(xSpeed));
         
 
         if(grounded && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(new Vector2(0, jumpForce));
+        }
+
+        if(xSpeed > 0 && transform.localScale.x < 0 || xSpeed < 0 && transform.localScale.x > 0)
+        {
+            transform.localScale *= new Vector2(-1, 1);
+        }
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce * transform.localScale.x, 0));
         }
     }
 }
