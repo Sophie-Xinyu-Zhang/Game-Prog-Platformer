@@ -7,19 +7,22 @@ public class PlayerCode : MonoBehaviour
 
     Rigidbody2D rb;
     Animator anim;
-    int speed = 10;
-    int jumpForce = 600;
+    int speed = 7;
+    public int jumpForce;
     public LayerMask groundLayer;
     public Transform Feet;
     public GameObject bulletPrefab;
+    public AudioClip shootSound;
     int bulletForce = 500;
     bool grounded = false;
     float groundCheckDis = 0.1f;
+    AudioSource _audioSource;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -49,6 +52,8 @@ public class PlayerCode : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
+            _audioSource.PlayOneShot(shootSound);
+            anim.SetTrigger("Shoot");
             GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce * transform.localScale.x, 0));
         }
