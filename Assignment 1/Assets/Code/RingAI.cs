@@ -29,7 +29,7 @@ public class RingAI : MonoBehaviour
             _audioSource.PlayOneShot(hitSnd);
             Destroy(other.gameObject);
             _animator.SetTrigger("Die");
-            Destroy(gameObject, .5f);
+            Destroy(gameObject, .2f);
         }
     }
 }
