@@ -959,7 +959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202416297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.97558737, y: -0.048153877, z: -10}
+  m_LocalPosition: {x: -0.9702678, y: -0.04770279, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1232,7 +1232,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7774936, y: 1}
+    m_SensorSize: {x: 1.7785548, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1496,6 +1496,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 317633419645318497, guid: 7e7449d54dac447178044d817fca33a3, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 7891260353483765251, guid: 8bfb653d4072d49a99af97a7b4b6d64c, type: 3}
     - target: {fileID: 1720441648215458881, guid: 7e7449d54dac447178044d817fca33a3, type: 3}
       propertyPath: m_Name
       value: prince
