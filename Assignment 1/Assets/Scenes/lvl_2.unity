@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd21667478290476ab2ad6937972a892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Title
+  nextLevel: lvl_5
 --- !u!1001 &1466608213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1103,8 +1103,8 @@ GameObject:
   - component: {fileID: 2138910555}
   - component: {fileID: 2138910554}
   - component: {fileID: 2138910553}
-  - component: {fileID: 2138910552}
   - component: {fileID: 2138910551}
+  - component: {fileID: 2138910557}
   m_Layer: 6
   m_Name: prince
   m_TagString: Player
@@ -1132,24 +1132,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2138910552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138910550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 648dd27e69626475f9d35d09ffcbb007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 55
-  Feet: {fileID: 513515560}
-  bulletPrefab: {fileID: 0}
-  shootSound: {fileID: 0}
 --- !u!61 &2138910553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1265,6 +1247,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2138910557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138910550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213ecdc548b404db9bf8ec331d28c530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  Feet: {fileID: 513515560}
+  bulletPrefab: {fileID: 6714045201542444641, guid: 8bfb653d4072d49a99af97a7b4b6d64c, type: 3}
+  ShootSprite: {fileID: 843268238185906706, guid: fb83206330a4849369c3afc914bc10c7, type: 3}
 --- !u!1001 &3580368414756993960
 PrefabInstance:
   m_ObjectHideFlags: 0
