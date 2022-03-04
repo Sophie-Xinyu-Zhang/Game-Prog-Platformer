@@ -7,7 +7,14 @@ public class GoToScene : MonoBehaviour
 {
 	[SerializeField] int sceneNum;
 	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		SceneManager.LoadScene(sceneNum);
+	{ if (collision.gameObject.tag == "Player")
+		{
+			SceneManager.LoadScene(sceneNum);
+			PlayerPrefs.SetInt("LevelNumber",SceneManager.GetActiveScene().buildIndex);
+		}
+        if (collision.gameObject.tag=="Bullet")
+        {
+			Destroy(this.gameObject);
+        }
 	}
 }
