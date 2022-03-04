@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public void Restart() {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene(PlayerPrefs.GetInt("LevelNumber"));
     }
 
     public void Exit() {
-        Application.Quit();
+        SceneManager.LoadScene("Title");
     }
 }
