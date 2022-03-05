@@ -1254,7 +1254,7 @@ PrefabInstance:
     - target: {fileID: 317633419645318497, guid: 7e7449d54dac447178044d817fca33a3, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 7891260353483765251, guid: 8bfb653d4072d49a99af97a7b4b6d64c, type: 3}
+      objectReference: {fileID: 428973962878721425, guid: 286510cb20676415fa7bdc59289c0c92, type: 3}
     - target: {fileID: 1720441648215458881, guid: 7e7449d54dac447178044d817fca33a3, type: 3}
       propertyPath: m_Name
       value: prince
