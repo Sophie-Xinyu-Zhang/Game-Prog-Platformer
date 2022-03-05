@@ -12,16 +12,21 @@ public class PlayerCode : MonoBehaviour
     public LayerMask groundLayer;
     public Transform Feet;
     public GameObject bulletPrefab;
+    public AudioClip shootSound;
     int bulletForce = 500;
     bool grounded = false;
     float groundCheckDis = 1.5f;
     public GameObject ShootSprite;
+    AudioSource _audioSource;
+
    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
+
  
     }
 
@@ -54,10 +59,14 @@ public class PlayerCode : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+              _audioSource.PlayOneShot(shootSound);
+            anim.SetTrigger("Shoot");
             GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce * transform.localScale.x, 0));
-            ShootSprite.GetComponent<SpriteRenderer>().enabled = true;
-            GetComponent<SpriteRenderer>().enabled = false;
+            // GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            // newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce * transform.localScale.x, 0));
+            // ShootSprite.GetComponent<SpriteRenderer>().enabled = true;
+            // GetComponent<SpriteRenderer>().enabled = false;
 
         }
         else
